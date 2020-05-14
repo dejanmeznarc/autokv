@@ -1,13 +1,6 @@
 #include <iostream>
-#include <cstdio>      /* printf */
-#include <cmath>       /* pow */
-#include <windows.h>
+#include <cmath>
 #include <bitset>
-#include <vector>
-#include <algorithm>
-
-
-#define MAX_SIZE 256
 
 
 using namespace std;
