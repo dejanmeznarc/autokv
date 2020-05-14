@@ -25,7 +25,7 @@ void askForVars() {
     num_outputs = pow(2, num_outputs);
 
 
-    cout << endl << "All possible outputs";
+    cout << endl << "All possible outputs:" << num_outputs;
 }
 
 
