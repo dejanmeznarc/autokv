@@ -77,26 +77,6 @@ void askForOutputs(char *outVals) {
     cout << endl;
 }
 
-/*
-void squareNeighbour(bool sqValue){
-    cout << " _______" << endl;
-    cout << "|   "               "    |" << endl;
-    cout << "|   " << sqValue << "   |" << endl;
-    cout << "|   "               "    |" << endl;
-    cout << "|_______|";
-}
-
-void square(bool sqValue){
-    cout << " _______" << endl;
-    cout << "|   "               "    |" << endl;
-    cout << "|   " << sqValue << "   |" << endl;
-    cout << "|   "               "    |" << endl;
-    cout << "|_______|" << endl;
-}
-*/
-
-
-
 
 void drawKVThree(char *sqValue) {
 
