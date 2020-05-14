@@ -98,6 +98,42 @@ void drawKVThree(char *sqValue) {
     cout << "|________========C=========________|" << endl;
 }
 
+void drawKVFour(char *sqValue) { //TODO bugg at sqValue[16]
+
+    std::cout << " ========A========_________________" << endl;
+    std::cout << "||  "               "    |" << "|   "               "    |" << "|   "               "    |"
+              << "|   "               "    |" << endl;
+    std::cout << "||  " << sqValue[13] << "   |" << "|   " << sqValue[15] << "   |" << "|   " << sqValue[7] << "   |"
+              << "|   " << sqValue[4] << "   |" << endl;
+    std::cout << "||  "               "    |" << "|   "               "    |" << "|   "               "    |"
+              << "|   "               "    |" << endl;
+    std::cout << "||_________________________________|" << endl;
+    std::cout << "|B_________________________________" << endl;
+    std::cout << "||  "               "    |" << "|   "               "    |" << "|   "               "    |"
+              << "|   "               "   ||" << endl;
+    std::cout << "||  " << sqValue[14] << "   |" << "|   " << sqValue[16] << "   |" << "|   " << sqValue[8] << "   |"
+              << "|   " << sqValue[5] << "  ||" << endl;
+    std::cout << "||  "               "    |" << "|   "               "    |" << "|   "               "    |"
+              << "|   "               "   ||" << endl;
+    std::cout << "||________________________________||" << endl;
+    std::cout << " _________________________________D|" << endl;
+    std::cout << "|   "               "    |" << "|   "               "    |" << "|   "               "    |"
+              << "|   "               "   ||" << endl;
+    std::cout << "|   " << sqValue[10] << "   |" << "|   " << sqValue[12] << "   |" << "|   " << sqValue[3] << "   |"
+              << "|   " << sqValue[1] << "  ||" << endl;
+    std::cout << "|   "               "    |" << "|   "               "    |" << "|   "               "    |"
+              << "|   "               "   ||" << endl;
+    std::cout << "|_________________________________||" << endl;
+    std::cout << " __________________________________" << endl;
+    std::cout << "|   "               "    |" << "|   "               "    |" << "|   "               "    |"
+              << "|   "               "    |" << endl;
+    std::cout << "|   " << sqValue[9] << "   |" << "|   " << sqValue[11] << "   |" << "|   " << sqValue[2] << "   |"
+              << "|   " << sqValue[0] << "   |" << endl;
+    std::cout << "|   "               "    |" << "|   "               "    |" << "|   "               "    |"
+              << "|   "               "    |" << endl;
+    std::cout << "|________========C=========________|" << endl;
+}
+
 void drawKVTwo(char *sqValue) {
 
     cout << " ====A====_______" << endl;
@@ -112,11 +148,14 @@ void drawKVTwo(char *sqValue) {
     cout << "|_______________||" << endl;
 }
 
+
 void checkNumInputs(char *outputs) {
     if (num_of_inputs == 3)
         drawKVThree(outputs);
     else if (num_of_inputs == 2)
         drawKVTwo(outputs);
+    else if (num_of_inputs == 4)
+        drawKVFour(outputs);
 }
 
 
