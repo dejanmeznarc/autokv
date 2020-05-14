@@ -17,20 +17,6 @@ int num_of_inputs = 3;
 int num_outputs = 8;
 
 
-void askForVars() {
-
-    //ask for num of inputs
-    cout << "Number of inputs: ";
-    cin >> num_of_inputs;
-
-
-    //calculate number of possible combinations
-    num_outputs = pow(2, num_of_inputs);
-
-
-    cout << endl << "All possible outputs:" << num_outputs;
-}
-
 //covert n to binary.
 string toBinary(int n, int chars) {
 
@@ -49,48 +35,61 @@ string toBinary(int n, int chars) {
 }
 
 
-void doMath() {
+void askForInputs() {
 
-    char out_vals[num_outputs];
+    //ask for num of inputs
+    cout << "Number of inputs: ";
+    cin >> num_of_inputs;
 
-    cout << "A | B | C | out " << endl;
+
+    //calculate number of possible combinations
+    num_outputs = pow(2, num_of_inputs);
+
+
+    cout << endl << "All possible outputs:" << num_outputs << endl;
+}
+
+
+void askForOutputs(char *outVals) {
+
+    //print letters (top row)
+    char c = 'A';
+    for (int k = 0; k < num_of_inputs; ++k) {
+        cout << c++ << " | ";
+    }
+    cout << "out" << endl;
 
     //scroll through every output
     for (int i = 0; i < num_outputs; i++) {
+
+        //print input values
         const char *chars = toBinary(i, num_of_inputs).c_str();
-
         for (int j = 0; j < num_of_inputs; ++j) {
-
             cout << chars[j] << " | ";
-
-
         }
 
-        cout << " " << endl;
 
-
-
-
-
-        //    cin >> outputs[i]; //TODO: check valid type
+        //ask user for output
+        cin >> outVals[i];
+        cout << " ";
 
     }
-
-
+    cout << endl;
 }
+
 
 
 int main() {
 
-    askForVars();
-    doMath();
+
+    askForInputs();
+
+    char outputs[num_outputs];
+
+    askForOutputs(outputs);
 
 
-    int n = 4;
 
-    int arr[n];
-
-    // Print all binary strings
 
 
     return 0;
