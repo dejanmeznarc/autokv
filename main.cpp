@@ -98,6 +98,7 @@ void drawKVThree(char *sqValue) {
     cout << "|________========C=========________|" << endl;
 }
 
+
 void drawKVFour(char *sqValue) { //TODO bugg at sqValue[16]
 
     std::cout << " ========A========_________________" << endl;
@@ -134,6 +135,7 @@ void drawKVFour(char *sqValue) { //TODO bugg at sqValue[16]
     std::cout << "|________========C=========________|" << endl;
 }
 
+
 void drawKVTwo(char *sqValue) {
 
     cout << " ====A====_______" << endl;
@@ -154,8 +156,10 @@ void checkNumInputs(char *outputs) {
         drawKVThree(outputs);
     else if (num_of_inputs == 2)
         drawKVTwo(outputs);
+
     else if (num_of_inputs == 4)
         drawKVFour(outputs);
+
 }
 
 
