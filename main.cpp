@@ -161,45 +161,42 @@ void checkNumInputs(char *outputs) {
 
 }
 
-string getFormula(char *outputs) {
+void getFormula(char *outputs) {
 
     std::string out;
     char label = 'A';
-    string result;
+    std::string result;
     char one = '1';
     char none = '0';
 
-    //cout << outputs;
-
     for (int i = 0; i < num_outputs; i++) {
         label = 'A';
-        if (outputs[i] == one) {
-            //cout << label;
+        if (outputs[i] == one) { // checks if output = 1
+
             out = toBinary(i, num_of_inputs);
-            for (int j = 0; j < num_of_inputs; j++) {
-                if (out[j] == one) {
+
+            for (int j = 0; j < num_of_inputs; j++) {// reads through every input and adds to string accordingly
+
+                if (out[j] == one)
                     result += label;
-                } else if (out[j] == none) {
+
+                else if (out[j] == none) {
                     result += "!";
                     result += label;
-                } else {
-
-                }
-
-                if (j < num_of_inputs - 1) {
+                } else if (j < num_of_inputs - 1) { // makes sure + ist added at the end
                     result += " + ";
                 }
 
                 label++;
             }
-            if (i < num_outputs) {
+            if (i < num_outputs - 1) { // makes sure * isnt added at the end
                 result += " * ";
             }
 
         }
     }
+    cout << result;
 
-    return result;
 
 }
 
@@ -214,9 +211,9 @@ int main() {
 
     checkNumInputs(outputs);
 
-    string formula = getFormula(outputs);
+    getFormula(outputs);
 
-    cout << formula;
+
 
 
     return 0;
