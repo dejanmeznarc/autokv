@@ -3,4 +3,4 @@ project(autokv)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(autokv main.cpp)
+add_executable(autokv main.cpp KVdrawer.cpp KVdrawer.h)

@@ -1,13 +1,7 @@
 #include <iostream>
-#include <cstdio>      /* printf */
-#include <cmath>       /* pow */
-#include <windows.h>
+#include <cmath>
 #include <bitset>
-#include <vector>
-#include <algorithm>
-
-
-#define MAX_SIZE 256
+#include "KVdrawer.h"
 
 
 using namespace std;
@@ -77,28 +71,6 @@ void askForOutputs(char *outVals) {
     cout << endl;
 }
 
-
-void drawKVThree(char *sqValue) {
-
-    cout << " ========A========_________________" << endl;
-    cout << "||  "               "    |" << "|   "               "    |" << "|   "               "    |"
-         << "|   "               "    |" << endl;
-    cout << "B|  " << sqValue[6] << "   |" << "|   " << sqValue[7] << "   |" << "|   " << sqValue[3] << "   |" << "|   "
-         << sqValue[2] << "   |" << endl;
-    cout << "||  "               "    |" << "|   "               "    |" << "|   "               "    |"
-         << "|   "               "    |" << endl;
-    cout << "||_________________________________|" << endl;
-    cout << " __________________________________" << endl;
-    cout << "|   "               "    |" << "|   "               "    |" << "|   "               "    |"
-         << "|   "               "    |" << endl;
-    cout << "|   " << sqValue[4] << "   |" << "|   " << sqValue[5] << "   |" << "|   " << sqValue[3] << "   |" << "|   "
-         << sqValue[0] << "   |" << endl;
-    cout << "|   "               "    |" << "|   "               "    |" << "|   "               "    |"
-         << "|   "               "    |" << endl;
-    cout << "|________========C=========________|" << endl;
-}
-
-
 void drawKVFour(char *sqValue) { //TODO bugg at sqValue[16]
 
     std::cout << " ========A========_________________" << endl;
@@ -135,22 +107,6 @@ void drawKVFour(char *sqValue) { //TODO bugg at sqValue[16]
     std::cout << "|________========C=========________|" << endl;
 }
 
-
-void drawKVTwo(char *sqValue) {
-
-    cout << " ====A====_______" << endl;
-    cout << "|   "               "    |" << "|   "               "    |" << endl;
-    cout << "|   " << sqValue[2] << "   |" << "|   " << sqValue[0] << "   |" << endl;
-    cout << "|   "               "    |" << "|   "               "    |" << endl;
-    cout << "|________________|" << endl;
-    cout << " _______________" << endl;
-    cout << "|   "               "    |" << "|   "               "   ||" << endl;
-    cout << "|   " << sqValue[3] << "   |" << "|   " << sqValue[1] << "  |B" << endl;
-    cout << "|   "               "    |" << "|   "               "   ||" << endl;
-    cout << "|_______________||" << endl;
-}
-
-
 void checkNumInputs(char *outputs) {
     if (num_of_inputs == 3)
         drawKVThree(outputs);
@@ -179,6 +135,7 @@ void getFormula(char *outputs) {
 
                 if (out[j] == one)
                     result += label;
+
 
                 else if (out[j] == none) {
                     result += "!";
@@ -209,11 +166,16 @@ int main() {
 
     askForOutputs(outputs);
 
-    checkNumInputs(outputs);
+   
 
     getFormula(outputs);
 
 
+
+    KVdrawer drawer(outputs, num_of_inputs);
+
+
+    drawer.draw();
 
 
     return 0;
