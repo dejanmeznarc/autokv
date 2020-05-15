@@ -156,15 +156,55 @@ void checkNumInputs(char *outputs) {
         drawKVThree(outputs);
     else if (num_of_inputs == 2)
         drawKVTwo(outputs);
-
     else if (num_of_inputs == 4)
         drawKVFour(outputs);
 
 }
 
+string getFormula(char *outputs) {
+
+    std::string out;
+    char label = 'A';
+    string result;
+    char one = '1';
+    char none = '0';
+
+    //cout << outputs;
+
+    for (int i = 0; i < num_outputs; i++) {
+        label = 'A';
+        if (outputs[i] == one) {
+            //cout << label;
+            out = toBinary(i, num_of_inputs);
+            for (int j = 0; j < num_of_inputs; j++) {
+                if (out[j] == one) {
+                    result += label;
+                } else if (out[j] == none) {
+                    result += "!";
+                    result += label;
+                } else {
+
+                }
+
+                if (j < num_of_inputs - 1) {
+                    result += " + ";
+                }
+
+                label++;
+            }
+            if (i < num_of_inputs + 1) {
+                result += " * ";
+            }
+
+        }
+    }
+
+    return result;
+
+}
+
 
 int main() {
-
 
     askForInputs();
 
@@ -174,7 +214,9 @@ int main() {
 
     checkNumInputs(outputs);
 
+    string formula = getFormula(outputs);
 
+    cout << formula;
 
 
     return 0;
