@@ -192,7 +192,7 @@ string getFormula(char *outputs) {
 
                 label++;
             }
-            if (i < num_of_inputs + 1) {
+            if (i < num_outputs) {
                 result += " * ";
             }
 
