@@ -168,6 +168,12 @@ void getFormula(char *outputs) {
     std::string result;
     char one = '1';
     char none = '0';
+    int numOfOnes = 0;
+
+    for (int k = 0; k < num_of_inputs; k++) {
+        if (outputs[k] == one)
+            numOfOnes++;
+    }
 
     for (int i = 0; i < num_outputs; i++) {
         label = 'A';
@@ -183,15 +189,16 @@ void getFormula(char *outputs) {
                 else if (out[j] == none) {
                     result += "!";
                     result += label;
-                } else if (j < num_of_inputs - 1) { // makes sure + ist added at the end
+                } else {
+                }
+                if (j < num_of_inputs - 1) { // makes sure + ist added at the end
                     result += " + ";
                 }
-
                 label++;
             }
-            if (i < num_outputs - 1) { // makes sure * isnt added at the end
+            if (i < numOfOnes + 1) // makes sure * isnt added at the end
                 result += " * ";
-            }
+
 
         }
     }
