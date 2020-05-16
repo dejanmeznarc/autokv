@@ -92,7 +92,6 @@ public:
     char *outputs;
     int outputs_cont;
 
-
     void draw() {
         switch (outputs_cont) {
             case 2:
