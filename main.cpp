@@ -71,9 +71,101 @@ void askForOutputs(char *outVals) {
     cout << endl;
 }
 
+void drawKVFour(char *sqValue) { //TODO bugg at sqValue[16]
+
+    std::cout << " ========A========_________________" << endl;
+    std::cout << "||  "               "    |" << "|   "               "    |" << "|   "               "    |"
+              << "|   "               "    |" << endl;
+    std::cout << "||  " << sqValue[13] << "   |" << "|   " << sqValue[15] << "   |" << "|   " << sqValue[7] << "   |"
+              << "|   " << sqValue[4] << "   |" << endl;
+    std::cout << "||  "               "    |" << "|   "               "    |" << "|   "               "    |"
+              << "|   "               "    |" << endl;
+    std::cout << "||_________________________________|" << endl;
+    std::cout << "|B_________________________________" << endl;
+    std::cout << "||  "               "    |" << "|   "               "    |" << "|   "               "    |"
+              << "|   "               "   ||" << endl;
+    std::cout << "||  " << sqValue[14] << "   |" << "|   " << sqValue[16] << "   |" << "|   " << sqValue[8] << "   |"
+              << "|   " << sqValue[5] << "  ||" << endl;
+    std::cout << "||  "               "    |" << "|   "               "    |" << "|   "               "    |"
+              << "|   "               "   ||" << endl;
+    std::cout << "||________________________________||" << endl;
+    std::cout << " _________________________________D|" << endl;
+    std::cout << "|   "               "    |" << "|   "               "    |" << "|   "               "    |"
+              << "|   "               "   ||" << endl;
+    std::cout << "|   " << sqValue[10] << "   |" << "|   " << sqValue[12] << "   |" << "|   " << sqValue[3] << "   |"
+              << "|   " << sqValue[1] << "  ||" << endl;
+    std::cout << "|   "               "    |" << "|   "               "    |" << "|   "               "    |"
+              << "|   "               "   ||" << endl;
+    std::cout << "|_________________________________||" << endl;
+    std::cout << " __________________________________" << endl;
+    std::cout << "|   "               "    |" << "|   "               "    |" << "|   "               "    |"
+              << "|   "               "    |" << endl;
+    std::cout << "|   " << sqValue[9] << "   |" << "|   " << sqValue[11] << "   |" << "|   " << sqValue[2] << "   |"
+              << "|   " << sqValue[0] << "   |" << endl;
+    std::cout << "|   "               "    |" << "|   "               "    |" << "|   "               "    |"
+              << "|   "               "    |" << endl;
+    std::cout << "|________========C=========________|" << endl;
+}
+
+void checkNumInputs(char *outputs) {
+    if (num_of_inputs == 3)
+        drawKVThree(outputs);
+    else if (num_of_inputs == 2)
+        drawKVTwo(outputs);
+    else if (num_of_inputs == 4)
+        drawKVFour(outputs);
+
+}
+
+void getFormula(char *outputs) {
+
+    std::string out;
+    char label = 'A';
+    std::string result;
+    char one = '1';
+    char none = '0';
+    int numOfOnes = 0;
+
+    for (int k = 0; k < num_of_inputs; k++) {
+        if (outputs[k] == one)
+            numOfOnes++;
+    }
+
+    for (int i = 0; i < num_outputs; i++) {
+        label = 'A';
+        if (outputs[i] == one) { // checks if output = 1
+
+            out = toBinary(i, num_of_inputs);
+
+            for (int j = 0; j < num_of_inputs; j++) {// reads through every input and adds to string accordingly
+
+                if (out[j] == one)
+                    result += label;
+
+
+                else if (out[j] == none) {
+                    result += "!";
+                    result += label;
+                } else {
+                }
+                if (j < num_of_inputs - 1) { // makes sure + ist added at the end
+                    result += " + ";
+                }
+                label++;
+            }
+            if (i < numOfOnes + 1) // makes sure * isnt added at the end
+                result += " * ";
+
+
+        }
+    }
+    cout << result;
+
+
+}
+
 
 int main() {
-
 
     askForInputs();
 
@@ -81,7 +173,14 @@ int main() {
 
     askForOutputs(outputs);
 
+   
+
+    getFormula(outputs);
+
+
+
     KVdrawer drawer(outputs, num_of_inputs);
+
 
     drawer.draw();
 
