@@ -48,6 +48,44 @@ private:
         std::cout << "|_______________||" << std::endl;
     }
 
+    void drawKVFour(char *sqValue) { //TODO bugg at sqValue[16]
+
+        std::cout << " ========A========_________________" << std::endl;
+        std::cout << "||  "               "    |" << "|   "               "    |" << "|   "               "    |"
+                  << "|   "               "    |" << std::endl;
+        std::cout << "||  " << sqValue[13] << "   |" << "|   " << sqValue[15] << "   |" << "|   " << sqValue[7]
+                  << "   |"
+                  << "|   " << sqValue[4] << "   |" << std::endl;
+        std::cout << "||  "               "    |" << "|   "               "    |" << "|   "               "    |"
+                  << "|   "               "    |" << std::endl;
+        std::cout << "||_________________________________|" << std::endl;
+        std::cout << "|B_________________________________" << std::endl;
+        std::cout << "||  "               "    |" << "|   "               "    |" << "|   "               "    |"
+                  << "|   "               "   ||" << std::endl;
+        std::cout << "||  " << sqValue[14] << "   |" << "|   " << sqValue[16] << "   |" << "|   " << sqValue[8]
+                  << "   |"
+                  << "|   " << sqValue[5] << "  ||" << std::endl;
+        std::cout << "||  "               "    |" << "|   "               "    |" << "|   "               "    |"
+                  << "|   "               "   ||" << std::endl;
+        std::cout << "||________________________________||" << std::endl;
+        std::cout << " _________________________________D|" << std::endl;
+        std::cout << "|   "               "    |" << "|   "               "    |" << "|   "               "    |"
+                  << "|   "               "   ||" << std::endl;
+        std::cout << "|   " << sqValue[10] << "   |" << "|   " << sqValue[12] << "   |" << "|   " << sqValue[3]
+                  << "   |"
+                  << "|   " << sqValue[1] << "  ||" << std::endl;
+        std::cout << "|   "               "    |" << "|   "               "    |" << "|   "               "    |"
+                  << "|   "               "   ||" << std::endl;
+        std::cout << "|_________________________________||" << std::endl;
+        std::cout << " __________________________________" << std::endl;
+        std::cout << "|   "               "    |" << "|   "               "    |" << "|   "               "    |"
+                  << "|   "               "    |" << std::endl;
+        std::cout << "|   " << sqValue[9] << "   |" << "|   " << sqValue[11] << "   |" << "|   " << sqValue[2] << "   |"
+                  << "|   " << sqValue[0] << "   |" << std::endl;
+        std::cout << "|   "               "    |" << "|   "               "    |" << "|   "               "    |"
+                  << "|   "               "    |" << std::endl;
+        std::cout << "|________========C=========________|" << std::endl;
+    }
 
 public:
 
