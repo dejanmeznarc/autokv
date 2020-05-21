@@ -85,6 +85,7 @@ int main() {
 
     drawer.draw();
 
+    system("PAUSE");
 
     return 0;
 }

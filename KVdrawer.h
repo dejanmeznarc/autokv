@@ -14,9 +14,10 @@ private:
 
     void drawKVThree() {
 
-        std::cout << " ========A========_________________" << std::endl;
+        std::cout << " ========A========" << std::endl;
+        std::cout << " ----------------------------------" << std::endl;
         std::cout << "||  "               "    |" << "|   "               "    |" << "|   "               "    |"
-                  << "|   "               "    |" << std::endl;
+                  << "| "               "    |" << std::endl;
         std::cout << "B|  " << outputs[6] << "   |" << "|   " << outputs[7] << "   |" << "|   " << outputs[3] << "   |"
                   << "|   "
                   << outputs[2] << "   |" << std::endl;
