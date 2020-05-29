@@ -14,25 +14,16 @@ private:
 
     void drawKVThree() {
 
-        std::cout << " ========A========" << std::endl;
-        std::cout << " ----------------------------------" << std::endl;
-        std::cout << "||  "               "    |" << "|   "               "    |" << "|   "               "    |"
-                  << "| "               "    |" << std::endl;
-        std::cout << "B|  " << outputs[6] << "   |" << "|   " << outputs[7] << "   |" << "|   " << outputs[3] << "   |"
-                  << "|   "
-                  << outputs[2] << "   |" << std::endl;
-        std::cout << "||  "               "    |" << "|   "               "    |" << "|   "               "    |"
-                  << "|   "               "    |" << std::endl;
-        std::cout << "||_________________________________|" << std::endl;
-        std::cout << " __________________________________" << std::endl;
-        std::cout << "|   "               "    |" << "|   "               "    |" << "|   "               "    |"
-                  << "|   "               "    |" << std::endl;
-        std::cout << "|   " << outputs[4] << "   |" << "|   " << outputs[5] << "   |" << "|   " << outputs[3] << "   |"
-                  << "|   "
-                  << outputs[0] << "   |" << std::endl;
-        std::cout << "|   "               "    |" << "|   "               "    |" << "|   "               "    |"
-                  << "|   "               "    |" << std::endl;
-        std::cout << "|________========C=========________|" << std::endl;
+        std::cout << "  _========A========_________________" << std::endl;
+        std::cout << "| |  "               "    |" << "|   "               "    |" << "|   "               "    |"  << "|   "               "    |" << std::endl;
+        std::cout << "B |  " << outputs[6] << "   |" << "|   " << outputs[7] << "   |" << "|   " << outputs[3] << "   |"  << "|   " << outputs[2] << "   |" << std::endl;
+        std::cout << "| |  "               "    |" << "|   "               "    |" << "|   "               "    |" << "|   "               "    |" << std::endl;
+        std::cout << "| |_________________________________|" << std::endl;
+        std::cout << "  |   "               "    |" << "|   "               "    |" << "|   "               "    |"  << "|   "               "    |" << std::endl;
+        std::cout << "  |   " << outputs[4] << "   |" << "|   " << outputs[5] << "   |" << "|   " << outputs[3] << "   |" << "|   " << outputs[0] << "   |" << std::endl;
+        std::cout << "  |   "               "    |" << "|   "               "    |" << "|   "               "    |"  << "|   "               "    |" << std::endl;
+        std::cout << "  |----------------------------------|" << std::endl;
+        std::cout << "           ========C=========" << std::endl;
     }
 
     void drawKVTwo() {

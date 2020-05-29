@@ -74,6 +74,9 @@ void askForOutputs(char *outVals) {
 
 int main() {
 
+    cout << "Auto Zaponšek" << endl;
+    cout << "(c) Dejan Mežnarc, Luka Knapic" << endl;
+    cout << "    http://meznarc.si, http://lukaknapic.si" << endl;
 
     askForInputs();
 
